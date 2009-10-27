@@ -61,3 +61,21 @@ rlgn_list = sorted_dict_pairs(rlgn)
 bunch_list = sorted_dict_pairs(rlgn_bunch.__dict__)
 assert rlgn_list == bunch_list
 
+# Check for compatibility with YAML
+# JSON should be a subset of YAML, try loading our json file with PyYAML
+yaml_loaded = False
+try:
+    import yaml
+    yaml_loaded = True
+except ImportError:
+    pass
+
+if yaml_loaded:
+    fp = file(fn)
+    json_dict = json.load(fp)
+    fp.seek(0)
+    yaml_dict = yaml.load(fp)
+    fp.close()
+    json_list = sorted_dict_pairs(json_dict)
+    yaml_list = sorted_dict_pairs(yaml_dict)
+    assert json_list == yaml_list
