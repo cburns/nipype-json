@@ -38,7 +38,7 @@ inputs = copy.deepcopy(rlgn_bunch.__dict__)
 inputs['infile'] = add_hashes(inputs, 'infile')
 
 # Dump input dictionary to file
-fn = 'realign_json.txt'
+fn = 'realign_json.json'
 fp = file(fn, 'w')
 json.dump(inputs, fp, sort_keys=True, indent=4)
 fp.close()
