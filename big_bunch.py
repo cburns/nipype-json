@@ -378,5 +378,5 @@ Bunch(bases={'hrf': {'derivs': [0, 0]}},
         [ '/home/cburns/data/nipype-tutorial/workingdir/_subject_id_s1/Smooth.spm/swrf10.nii',85]]], 
                         dtype=object)}], 
       spmmat_dir=None, 
-      timing_units=secs, 
+      timing_units='secs', 
       volterra_expansion_order=None, )
